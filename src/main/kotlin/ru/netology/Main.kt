@@ -8,8 +8,7 @@ fun main() {
     println(sizeCommission(100_000))
 
 }
-
-private fun sizeCommission(
+ fun sizeCommission(
     amount: Int,
     sumAmountMonth: Int = 0,
     typeCard: String = "VkPay"
