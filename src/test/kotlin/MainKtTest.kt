@@ -9,7 +9,7 @@ class MainKtTest {
         val amount = 150_000
         val sumAmountMonth = 1_500_500
         val typeCard = "Mastercard"
-        val expectedCommission = 0
+        val expectedCommission = 3_500
 
         val commission = sizeCommission(amount, sumAmountMonth, typeCard)
 
