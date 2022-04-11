@@ -8,7 +8,8 @@ fun main() {
     println(sizeCommission(100_000))
 
 }
- fun sizeCommission(
+
+fun sizeCommission(
     amount: Int,
     sumAmountMonth: Int = 0,
     typeCard: String = "VkPay"
@@ -19,8 +20,10 @@ fun main() {
     val necessaryCommissionMastercard = 2_000
 
     return when (typeCard) {
-        "Mastercard", "Maestro" -> if (sumAmountMonth < 7_500_000) 0 else amount * sizeCommissionMastercard + necessaryCommissionMastercard
-        "Visa", "Мир" -> if (amount * sizeCommissionVisa > minCommissionVisa) amount * sizeCommissionVisa else minCommissionVisa
+        "Mastercard" -> if (sumAmountMonth < 7_500_000) 0 else amount * sizeCommissionMastercard + necessaryCommissionMastercard
+        "Maestro" -> if (sumAmountMonth < 7_500_000) 0 else amount * sizeCommissionMastercard + necessaryCommissionMastercard
+        "Visa" -> if (amount * sizeCommissionVisa > minCommissionVisa) amount * sizeCommissionVisa else minCommissionVisa
+        "Мир" -> if (amount * sizeCommissionVisa > minCommissionVisa) amount * sizeCommissionVisa else minCommissionVisa
         else -> 0
     }
 
